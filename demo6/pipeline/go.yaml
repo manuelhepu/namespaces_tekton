@@ -1,0 +1,22 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: repo6
+  namespace: demo6
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: golang-test-pipeline
+  workspaces:
+    - name: shared-workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+             - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+  params:
+  - name: repo-url
+    value: https://github.com/manuelhepu/repo5.git
