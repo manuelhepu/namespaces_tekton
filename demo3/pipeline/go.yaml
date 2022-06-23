@@ -5,6 +5,7 @@ metadata:
   name: repo3
   namespace: demo3
 spec:
+  serviceAccountName: pipeline
   pipelineRef:
     name: golang-test-pipeline
   workspaces:
