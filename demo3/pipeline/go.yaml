@@ -18,4 +18,4 @@ spec:
               storage: 1Gi
   params:
   - name: repo-url
-    value: git@github.com:manuelhepu/repo3.git
+    value: https://github.com/manuelhepu/repo3.git
