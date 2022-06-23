@@ -11,6 +11,8 @@ spec:
   workspaces:
     - name: shared-workspace
       volumeClaimTemplate:
+      metadata:
+        finalizers:
         spec:
           accessModes:
              - ReadWriteOnce
