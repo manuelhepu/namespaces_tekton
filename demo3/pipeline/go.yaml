@@ -11,8 +11,8 @@ spec:
     - name: shared-workspace
       volumeClaimTemplate:
         spec:
-       accessModes:
-       - ReadWriteOnce
+          accessModes:
+             - ReadWriteOnce
           resources:
             requests:
               storage: 1Gi
