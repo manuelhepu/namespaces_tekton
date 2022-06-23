@@ -10,15 +10,8 @@ spec:
     name: golang-test-pipeline
   workspaces:
     - name: shared-workspace
-      volumeClaimTemplate:
-      metadata:
-        finalizers: []
-        spec:
-          accessModes:
-             - ReadWriteOnce
-          resources:
-            requests:
-              storage: 1Gi
+      persistentvolumeclaim:
+        claimName: pvc1
   params:
   - name: repo-url
     value: https://github.com/manuelhepu/repo5.git
