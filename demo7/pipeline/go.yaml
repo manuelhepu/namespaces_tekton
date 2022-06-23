@@ -12,7 +12,7 @@ spec:
     - name: shared-workspace
       volumeClaimTemplate:
       metadata:
-        finalizers:
+        finalizers: []
         spec:
           accessModes:
              - ReadWriteOnce
