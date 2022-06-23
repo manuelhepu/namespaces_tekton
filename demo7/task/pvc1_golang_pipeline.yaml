@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: pvc1
   namespace: demo7
-  finalizers: null
+  finalizers: []
 spec:
   accessModes:
     - ReadWriteOnce
