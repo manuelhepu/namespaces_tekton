@@ -1,0 +1,21 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: repo3
+  namespace: demo3
+spec:
+  pipelineRef:
+    name: golang-test-pipeline
+  workspaces:
+    - name: shared-workspace
+      volumeClaimTemplate:
+      	spec:
+		  accessModes:
+			- ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+  params:
+  - name: repo-url
+    value: git@github.com:manuelhepu/repo3.git
