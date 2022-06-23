@@ -1,0 +1,9 @@
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: pipeline
+  namespace: demo
+secrets:
+  - name: github-credentials
+imagePullSecrets:
