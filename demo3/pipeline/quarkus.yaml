@@ -16,7 +16,7 @@ spec:
              - ReadWriteOnce
           resources:
             requests:
-              storage: 5Gi
+              storage: 10Gi
     - name: k8s-source
       volumeClaimTemplate:
         spec:
