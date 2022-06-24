@@ -75,7 +75,7 @@ spec:
         - name: GOALS
           value: ['-B', 'verify']
         - name: MAVEN_IMAGE
-          value: registry.access.redhat.com/ubi8/openjdk-17
+          value: openjdk:17.0-jdk
 
     - name: build
       taskRef:
@@ -104,35 +104,5 @@ spec:
         - name: end
           value: '19'
 
-    - name: k8s-clone
-      taskRef:
-        name: git-clone
-        kind: ClusterTask
-      workspaces:
-        - name: output
-          workspace: k8s-source
-      params:
-        - name: url
-          value: $(params.k8s-git-url)
-        - name: revision
-          value: $(params.k8s-git-branch)
 
-    - name: update-image
-      taskRef:
-        name: kustomize-set-image
-      runAfter:
-        - k8s-clone
-        - truncate-digest
-        - test
-      workspaces:
-        - name: source
-          workspace: k8s-source
-      params:
-        - name: image-url
-          value: $(params.image-url)@$(tasks.build.results.IMAGE_DIGEST)
-        - name: path
-          value: $(params.kustomize-path)
-        - name: git-branch
-          value: $(params.k8s-git-branch)
-        - name: git-message
-          value: Promote $(tasks.truncate-digest.results.output) to dev
+
