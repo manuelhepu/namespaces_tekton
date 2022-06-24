@@ -52,7 +52,6 @@ spec:
       taskRef:
         name: git-clone
         kind: ClusterTask
-      runAfter: ['clean']
       workspaces:
         - name: output
           workspace: source
