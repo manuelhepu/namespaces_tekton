@@ -1,0 +1,25 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: repo7
+  namespace: demo7
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: petclinic-build
+  workspaces:
+    - name: maven-settings
+      configMap:
+        name: maven-settings
+    - name: workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+             - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+  params:
+  - name: repo-url
+    value: repo7
