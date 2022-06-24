@@ -33,7 +33,7 @@ spec:
   - name: git-url
     value: https://github.com/manuelhepu/repo1.git
   - name: git-revision
-    value: main
+    value: master
   - name: image-url
     value: quay.io/manuelhepu/quarkus
   - name: k8s-git-url
