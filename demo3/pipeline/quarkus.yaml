@@ -17,14 +17,6 @@ spec:
           resources:
             requests:
               storage: 2Gi
-    - name: k8s-source
-      volumeClaimTemplate:
-        spec:
-          accessModes:
-             - ReadWriteOnce
-          resources:
-            requests:
-              storage: 1Gi
     - name: scratch
       emptyDir: {}
   params:
