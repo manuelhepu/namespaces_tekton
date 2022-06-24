@@ -7,7 +7,6 @@ metadata:
 spec:
   workspaces:
     - name: source
-    - name: k8s-source
     - name: scratch
   params:
     - name: app-name
