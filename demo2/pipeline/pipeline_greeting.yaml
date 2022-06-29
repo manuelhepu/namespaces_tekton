@@ -32,19 +32,6 @@ spec:
       default: latest
       description: Container image tag to publish
 
-    - name: k8s-git-url
-      type: string
-      description: URL of the git repository containing k8s manifests
-
-    - name: k8s-git-branch
-      type: string
-      default: main
-      description: Git revision to checkout k8s manifests
-
-    - name: kustomize-path
-      type: string
-      default: overlays/dev
-      description: Directory to update kustomize in
 
   tasks:
     - name: clone
