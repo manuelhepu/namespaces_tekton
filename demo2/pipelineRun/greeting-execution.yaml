@@ -18,5 +18,5 @@ spec:
             requests:
               storage: 1Gi
   params:
-  - name: repo-url
+  - name: git-url
     value: git@github.com:manuelhepu/repo2.git
