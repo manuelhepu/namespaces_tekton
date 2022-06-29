@@ -1,0 +1,22 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: repo2
+  namespace: demo2
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: greeting
+  workspaces:
+    - name: source
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+             - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+  params:
+  - name: repo-url
+    value: git@github.com:manuelhepu/repo2.git
