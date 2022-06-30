@@ -14,7 +14,7 @@ spec:
         - --version
     - name: image
       type: string
-      default: registry.access.redhat.com/ubi8/nodejs-16
+      default: node:16.0.0-slim
   steps:
     - name: script
       image: $(params.image)
