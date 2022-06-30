@@ -74,7 +74,7 @@ spec:
       taskRef:
         name: buildah
         kind: ClusterTask
-      runAfter: ['clone']
+      runAfter: ['test']
       workspaces:
         - name: source
           workspace: source
